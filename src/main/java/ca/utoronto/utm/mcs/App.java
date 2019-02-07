@@ -25,7 +25,18 @@ public class App
            This change should be made in a branch made off of release/1.0 called
            bugfix/RemovedUselessStorage
         */
-
+        String s, s1;
+        int count = 0;
+        while (s = in.readLine()){
+          if (count == 0){
+            count++;
+            s1=s;
+          }
+          if (s.isEmpty()){
+            break;
+          }
+        }
+        /*
         List<String> lst = new ArrayList<String>();
         for (String s = in.readLine(); s != null; s = in.readLine()) {
             if (s.isEmpty()) {
@@ -34,7 +45,7 @@ public class App
             lst.add(s);
         }
         System.out.println(lst);
-
+        */
 
         /* TODO: TASK FOR 2nd MEMBER
            Display the current path of the web page.

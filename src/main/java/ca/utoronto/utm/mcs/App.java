@@ -8,7 +8,7 @@ import java.util.*;
  * Hello world!
  *
  */
-public class App 
+public class App
 {
     public static void handle(ServerSocket server) throws IOException {
         Socket client = server.accept();
@@ -35,7 +35,7 @@ public class App
         }
         System.out.println(lst);
 
-        
+
         /* TODO: TASK FOR 2nd MEMBER
            Display the current path of the web page.
            For example if the user is at localhost:8080/somepath here then the
@@ -44,12 +44,14 @@ public class App
            To get this data you will need to string split the first line read
            from the BufferedReader in. It will be formatted: GET /path HTTP/1.1
            simply replace the content of the <h1> with the middle element
-           
-           This change should be made in a branch made off of release/1.0 called 
+
+           This change should be made in a branch made off of release/1.0 called
            feature/DisplayPathHeader.
         */
-           
-        String body = "<h1>Gitflow Tutorial</h1>";
+        String[] parts = s1.split("/");
+
+        String body = "<h1>"+parts[1]+"</h1>";
+
 
         out.write("HTTP/1.1 200 OK\r\n");
         out.write(String.format("Content-Length: %d\r\n", body.length()));
